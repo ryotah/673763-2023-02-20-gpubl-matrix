@@ -1,0 +1,11 @@
+name: ci
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        chunk: [0, 1, 2]
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo ${{ matrix.chunk }}
